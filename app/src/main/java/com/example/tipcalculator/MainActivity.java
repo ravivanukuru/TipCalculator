@@ -8,51 +8,49 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import android.os.Bundle;
-
 public class MainActivity extends AppCompatActivity {
 
-    private EditText BillEditText;
+    private EditText EnterBillAmount;
     private TextView TipTextView;
-    private Button FifteenButton;
-    private Button EighteenButton;
-    private Button TwentyButton;
+    private Button FifteenPercentButton ;
+    private Button EighteenPercentButton;
+    private Button TwentyPercentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BillEditText = findViewById(R.id.billEditText);
+        EnterBillAmount = findViewById(R.id.EnterBillAmount);
         TipTextView = findViewById(R.id.tipTextView);
-        FifteenButton = findViewById(R.id.fifteenButton);
-        EighteenButton = findViewById(R.id.eighteenButton);
-        TwentyButton = findViewById(R.id.twentyButton);
+        FifteenPercentButton  = findViewById(R.id.FifteenPercentButton);
+        EighteenPercentButton = findViewById(R.id.EighteenPercentButton);
+        TwentyPercentButton = findViewById(R.id.TwentyPercentButton);
 
-        FifteenButton.setOnClickListener(new View.OnClickListener() {
+        FifteenPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double bill = Double.parseDouble(BillEditText.getText().toString());
+                double bill = Double.parseDouble(EnterBillAmount.getText().toString());
                 double tip = bill * .15;
                 double total = bill + tip;
                 TipTextView.setText("Tip: $" + tip + ", Total Bill: $" + total);
             }
         });
 
-        EighteenButton.setOnClickListener(new View.OnClickListener() {
+        EighteenPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double bill = Double.parseDouble(BillEditText.getText().toString());
+                double bill = Double.parseDouble(EnterBillAmount.getText().toString());
                 double tip = bill * .18;
                 double total = bill + tip;
                 TipTextView.setText("Tip: $" + tip + ", Total Bill: $" + total);
             }
         });
 
-        TwentyButton.setOnClickListener(new View.OnClickListener() {
+        TwentyPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double bill = Double.parseDouble(BillEditText.getText().toString());
+                double bill = Double.parseDouble(EnterBillAmount.getText().toString());
                 double tip = bill * .20;
                 double total = bill + tip;
                 TipTextView.setText("Tip: $" + tip + ", Total Bill: $" + total);
